@@ -162,6 +162,7 @@ install_applications() {
       # chrome
       # docker
       iterm2
+      licecap
       moom
       slack
       visual-studio-code
