@@ -159,7 +159,7 @@ install_applications() {
       1password
       chrome
       docker
-      fig
+      iterm2
       moom
       slack
       visual-studio-code
@@ -169,8 +169,8 @@ install_applications() {
     )
 
     for cask in ${casks[@]}; do
-      echo "${BLUE}> brew cask install ${cask}${RESET}"
-      brew cask install $cask
+      echo "${BLUE}> brew install --cask ${cask}${RESET}"
+      brew install --cask $cask
       echo "${BLUE}> done${RESET}"
       echo
     done
