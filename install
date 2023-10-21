@@ -123,12 +123,10 @@ install_languages() {
     }
 
     languages=(
-      dart
       golang
       nodejs
       python
       ruby
-      yarn
     )
 
     for lang in ${languages[@]}; do
@@ -159,14 +157,15 @@ install_applications() {
 
     casks=(
       1password
-      # chrome
-      # docker
-      iterm2
-      licecap
+      chrome
+      docker
+      fig
       moom
       slack
       visual-studio-code
       zoomus
+      spotify
+      expressvpn
     )
 
     for cask in ${casks[@]}; do
@@ -179,7 +178,7 @@ install_applications() {
 }
 
 # Install VSCode extensions
-# list was take using the following command
+# list was taken using the following command
 # > code --list-extensions
 install_vscode_extensions() {
   if [ $ALL = yes ] || [ $EXTENSIONS = yes ]; then
