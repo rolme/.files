@@ -123,9 +123,11 @@ install_languages() {
     }
 
     languages=(
-      golang
       nodejs
+      yarn
       python
+      poetry
+      golang
       ruby
     )
 
@@ -158,8 +160,10 @@ install_applications() {
     casks=(
       1password
       chrome
+      discord
       docker
       iterm2
+      # ml-studio
       moom
       slack
       visual-studio-code
@@ -171,49 +175,6 @@ install_applications() {
     for cask in ${casks[@]}; do
       echo "${BLUE}> brew install --cask ${cask}${RESET}"
       brew install --cask $cask
-      echo "${BLUE}> done${RESET}"
-      echo
-    done
-  fi
-}
-
-# Install VSCode extensions
-# list was taken using the following command
-# > code --list-extensions
-install_vscode_extensions() {
-  if [ $ALL = yes ] || [ $EXTENSIONS = yes ]; then
-    echo
-    echo "${YELLOW}==== Visual Studio Code Extensions ====${RESET}"
-    echo
-    echo "${BLUE}> checking if ${RESET}code${BLUE} exists${RESET}"
-
-    command_exists code || {
-      error 'code is not installed'
-      exit 1
-    }
-
-    extensions=(
-      apollographql.vscode-apollo
-      CoenraadS.bracket-pair-colorizer-2
-      dbaeumer.vscode-eslint
-      eamodio.gitlens
-      Equinusocio.vsc-community-material-theme
-      Equinusocio.vsc-material-theme
-      equinusocio.vsc-material-theme-icons
-      esbenp.prettier-vscode
-      HookyQR.beautify
-      # ms-azuretools.vscode-docker
-      # ms-kubernetes-tools.vscode-kubernetes-tools
-      ms-python.python
-      # msjsdiag.debugger-for-chrome
-      oderwat.indent-rainbow
-      PKief.material-icon-theme
-      redhat.vscode-yaml
-    )
-
-    for extn in ${extensions[@]}; do
-      echo "${BLUE}> code --install-extension ${extn}${RESET}"
-      code --install-extension $extn
       echo "${BLUE}> done${RESET}"
       echo
     done
