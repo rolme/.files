@@ -103,6 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias files="~/.files && asp && deactivate 2>/dev/null"
+alias poet="poetry"
 alias z="source ~/.zshrc"
 alias zrc="vi ~/.zshrc"
 alias zl="vi ~/.zshrc_local"
